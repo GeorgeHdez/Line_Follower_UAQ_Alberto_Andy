@@ -38,7 +38,6 @@ void main()
          lcd_gotoxy(1,1);
          printf(lcd_putc,"%Lu",A[x]);
          delay_ms(1000);
-         lcd_putc("\f");
       }
    
      

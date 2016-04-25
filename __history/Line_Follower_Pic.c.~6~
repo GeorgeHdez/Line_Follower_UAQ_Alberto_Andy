@@ -13,13 +13,12 @@
 #define LCD_DATA7       PIN_D6 
 #include <lcd.c>
 int16 A[8] = {0,0,0,0,0,0,0,0};
-void lectura_adc(void);
 void main()
 {
 // CONFIGURACION PWM
   setup_ccp1(CCP_PWM);
    setup_ccp2(CCP_PWM);
-   setup_timer_2(T2_DIV_BY_1,250,1); // PWM de 1khz
+   setup_timer_2(T2_DIV_BY_4,250,1); // PWM de 1khz
    set_pwm1_duty(1000);
    set_pwm2_duty(500);
 //CONFIGURACION LCD 
@@ -33,13 +32,6 @@ void main()
       printf(lcd_putc,"hola");
       delay_ms(1000);
       lectura_adc();
-      for(int x=0; x<8 ; x++)
-      {
-         lcd_gotoxy(1,1);
-         printf(lcd_putc,"%Lu",A[x]);
-         delay_ms(1000);
-         lcd_putc("\f");
-      }
    
      
    }

@@ -33,13 +33,6 @@ void main()
       printf(lcd_putc,"hola");
       delay_ms(1000);
       lectura_adc();
-      for(int x=0; x<8 ; x++)
-      {
-         lcd_gotoxy(1,1);
-         printf(lcd_putc,"%Lu",A[x]);
-         delay_ms(1000);
-         lcd_putc("\f");
-      }
    
      
    }

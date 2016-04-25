@@ -1,5 +1,5 @@
 ÀÄLine_Follower_Pic
-   ÀÄMAIN  0/86  Ram=0
+   ÀÄMAIN  0/236  Ram=2
       ÃÄ@cinit1  (Inline)  Ram=0
       ÃÄlcd_init  0/128  Ram=6
       ³  ÃÄ@delay_ms1  0/40  Ram=1
@@ -16,16 +16,26 @@
       ÃÄlcd_gotoxy  0/34  Ram=4
       ³  ÀÄlcd_send_byte  0/70  Ram=3
       ³     ÀÄ*
-      ÀÄ@PSTRINGC_670  0/34  Ram=2
-         ÀÄlcd_putc  0/82  Ram=1
-            ÃÄlcd_gotoxy  0/34  Ram=4
-            ³  ÀÄ*
-            ÃÄlcd_send_byte  0/70  Ram=3
-            ³  ÀÄ*
-            ÃÄ@delay_ms1  0/40  Ram=1
-            ÃÄlcd_gotoxy  0/34  Ram=4
-            ³  ÀÄ*
-            ÃÄlcd_send_byte  0/70  Ram=3
-            ³  ÀÄ*
-            ÀÄlcd_send_byte  0/70  Ram=3
-               ÀÄ*
+      ÃÄ@PSTRINGC_670  0/32  Ram=2
+      ³  ÀÄlcd_putc  0/80  Ram=1
+      ³     ÃÄlcd_gotoxy  0/34  Ram=4
+      ³     ³  ÀÄ*
+      ³     ÃÄlcd_send_byte  0/70  Ram=3
+      ³     ³  ÀÄ*
+      ³     ÃÄ@delay_ms1  0/40  Ram=1
+      ³     ÃÄlcd_gotoxy  0/34  Ram=4
+      ³     ³  ÀÄ*
+      ³     ÃÄlcd_send_byte  0/70  Ram=3
+      ³     ³  ÀÄ*
+      ³     ÀÄlcd_send_byte  0/70  Ram=3
+      ³        ÀÄ*
+      ÃÄ@delay_ms1  0/40  Ram=1
+      ÃÄlectura_adc  0/76  Ram=2
+      ÃÄlcd_gotoxy  0/34  Ram=4
+      ³  ÀÄ*
+      ÃÄ@PRINTF_LU_670  0/188  Ram=9
+      ³  ÀÄlcd_putc  0/80  Ram=1
+      ³     ÀÄ*
+      ÃÄ@delay_ms1  0/40  Ram=1
+      ÀÄ@PSTRINGC_670  0/32  Ram=2
+         ÀÄ*

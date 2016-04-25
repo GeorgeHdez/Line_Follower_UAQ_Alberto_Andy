@@ -14,7 +14,8 @@ Type=4
 [Opened Files]
 1=Line_Follower_Pic.c
 2=..\..\Line_Follower_Pic_Source\Line_Follower.c
-3=
+3=C:\Program Files (x86)\PICC\Drivers\lcd.c
+4=
 [Units]
 Count=1
 1=Line_Follower_Pic (main)

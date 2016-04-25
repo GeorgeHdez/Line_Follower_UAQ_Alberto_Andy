@@ -1,55 +1,58 @@
 
-ROM used:   702/32768 (2%)
-            702/32768 (2%) including unused fragments
+ROM used:   1114/32768 (3%)
+            1114/32768 (3%) including unused fragments
 
-            0.5 Average locations per line
-            6.4 Average locations per statement
+            0.8 Average locations per line
+            8.9 Average locations per statement
 
-RAM used:   4/2048 (0%) at main() level
-            17/2048 (1%) worst case
+RAM used:   22/2048 (1%) at main() level
+            43/2048 (2%) worst case
 
 Stack used: 6 worst case (6 in main + 0 for interrupts)
 Stack size: 31
 
 Lines Stmts  %   Files
 ----- ----- ---  -----
-   33    10   9  Line_Follower_Pic.c
+   57    25  20  Line_Follower_Pic.c
   837     0   0  C:\Program Files (x86)\PICC\Devices\18f4550.h
-  456   100  91  C:\Program Files (x86)\PICC\Drivers\lcd.c
+  456   100  80  C:\Program Files (x86)\PICC\Drivers\lcd.c
 ----- -----
- 1326   110 Total
+ 1350   125 Total
 
 Page ROM  %  RAM   Vol Diff  Functions:
 ---- --- --- ---   --- ----  ----------
-0     40   3    1             @delay_ms1
-0     74   5    3   760  4.5  lcd_read_byte
-0     82   6    2   262  3.7  lcd_read_nibble
-0     62   4    1   399  2.4  lcd_send_nibble
-0     70   5    3   415  3.7  lcd_send_byte
-0    128   9    6   852  6.2  lcd_init
+0     40   2    1             @delay_ms1
+0     74   3    3   760  4.5  lcd_read_byte
+0     82   4    2   262  3.7  lcd_read_nibble
+0     62   3    1   399  2.4  lcd_send_nibble
+0     70   3    3   415  3.7  lcd_send_byte
+0    128   6    6   852  6.2  lcd_init
 0     34   2    4   208  6.3  lcd_gotoxy
-0     82   6    1   354  4.7  lcd_putc
-0     86   6    0   216  2.2  MAIN
-0      6   0    0   147  3.5  @const685
-0     34   2    2             @PSTRINGC_670
+0     80   4    1   354  4.7  lcd_putc
+0    236  11    2   591  5.2  MAIN
+0      6   0    0   147  3.5  @const687
+0     32   1    2             @PSTRINGC_670
+0    188   8    9   147  3.5  @PRINTF_LU_670
+0      2   0    0   147  3.5  @const693
+0     76   3    2   147  3.5  lectura_adc
  Inline         0             @cinit1
 
 Program metrics:
-    Functions               9
-    Statements              110
-    Comments                256
-    Volume (V)              5580
-    Difficulty (D)          36.5
-    Effort to implement (E) 203853
-    Time to implement (T)   3 hours, 9 minutes
-    Est Delivered Bugs (B)  1
-    Cyclomatic Complexity   9
-    Maintainability (MI)    143
+    Functions               12
+    Statements              125
+    Comments                257
+    Volume (V)              7152
+    Difficulty (D)          50.7
+    Effort to implement (E) 362396
+    Time to implement (T)   5 hours, 36 minutes
+    Est Delivered Bugs (B)  2
+    Cyclomatic Complexity   13
+    Maintainability (MI)    138
 
  Segment     Used  Free
 -----------  ----  ----
 00000-00002     4  0  
-00004-07FFE   698  32066  
+00004-07FFE  1110  31654  
 
 
 
