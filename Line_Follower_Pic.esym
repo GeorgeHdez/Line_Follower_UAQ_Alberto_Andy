@@ -1,7 +1,8 @@
-D G "__PCH__" 0 64 ""5.015""
-D G "__DEVICE__" 0 64 "4550"
-D G "__DATE__" 0 64 ""25-Apr-16""
-D G "__TIME__" 0 64 ""10:18:51"" "Standard Header file for the PIC18F4550 device ////////////////"
+D G "LCD_LINE_LENGTH" 2 187 "20"
+D G "__PCH__" 0 32 ""5.015""
+D G "__DEVICE__" 0 32 "4550"
+D G "__DATE__" 0 32 ""25-Apr-16""
+D G "__TIME__" 0 32 ""10:30:33"" "Standard Header file for the PIC18F4550 device ////////////////"
 c L "set_tris_a" 1 3 6 "FUNCTION"
 v L "value" 1 45 "int8" `54 
 f B "set_tris_a" 1 45 "void(int8 value)" `53 
@@ -912,8 +913,73 @@ d G "INT_EEPROM" 1 831 "0x00A010"
 d G "INT_OSCF" 1 832 "0x00A080"
 d G "INT_SPP" 1 833 "0x009D80"
 d G "INT_USB" 1 834 "0x00A020"
-F G "main" 0 7 "void()" `646  "CONFIGURACION PWM"
-C L "main" 0 11 1 "FUNCTION"
+D G "use_portd_lcd" 0 6 "TRUE"
+D G "LCD_ENABLE_PIN" 0 7 "PIN_D0"
+D G "LCD_RS_PIN" 0 8 "PIN_D1"
+D G "LCD_RW_PIN" 0 9 "PIN_D2"
+D G "LCD_DATA4" 0 10 "PIN_D3"
+D G "LCD_DATA5" 0 11 "PIN_D4"
+D G "LCD_DATA6" 0 12 "PIN_D5"
+D G "LCD_DATA7" 0 13 "PIN_D6"
+D G "__LCD_C__" 2 76 ""
+C L "jump_to_irs" 2 2 2 "FUNCTION"
+C L "jump_to_irs" 2 2 1 "FUNCTION"
+C L "jump_to_irs" 2 2 1 "FUNCTION"
+C L "jump_to_irs" 2 2 1 "FUNCTION"
+C L "jump_to_irs" 2 2 1 "FUNCTION"
+C L "jump_to_irs" 2 2 1 "FUNCTION"
+C L "jump_to_irs" 2 2 2 "FUNCTION"
+T G "LCD_PIN_MAP" 2 90 "{int1 enable,int1 rs,int1 rw,int1 unused,int4 data}" `652  "this is to improve compatability with previous LCD drivers that accepted"
+D G "lcd_output_enable" 2 112 "(x) output_bit(LCD_ENABLE_PIN, x)"
+D G "lcd_enable_tris" 2 113 "()  output_drive(LCD_ENABLE_PIN)"
+D G "lcd_output_rs" 2 120 "(x) output_bit(LCD_RS_PIN, x)"
+D G "lcd_rs_tris" 2 121 "()  output_drive(LCD_RS_PIN)"
+D G "lcd_output_rw" 2 128 "(x) output_bit(LCD_RW_PIN, x)"
+D G "lcd_rw_tris" 2 129 "()  output_drive(LCD_RW_PIN)"
+D G "LCD_TYPE" 2 179 "2" "0=5x7, 1=5x10, 2=2 lines"
+D G "LCD_LINE_TWO" 2 183 "0x40" "LCD RAM address for the second line"
+D G "LCD_LINE_LENGTH" 2 187 "20"
+f G "lcd_read_nibble" 2 190 "int8()" `653 
+F G "lcd_read_byte" 2 193 "int8()" `654 
+V L "low" 2 194 "int8" `655 
+V L "high" 2 194 "int8" `656 
+F G "lcd_read_nibble" 2 240 "int8()" `653 
+V L "n" 2 242 "int8" `657 
+C L "lcd_read_nibble" 2 2 1 "FUNCTION"
+V L "n" 2 256 "int8" `659 
+F G "lcd_send_nibble" 2 257 "void(int8 n)" `658 
+C L "lcd_send_nibble" 2 2 1 "FUNCTION"
+V L "address" 2 274 "int8" `661 
+V L "n" 2 274 "int8" `662 
+F G "lcd_send_byte" 2 275 "void(int8 address,int8 n)" `660 
+F G "lcd_init" 2 300 "void()" `663 
+V L "i" 2 301 "int8" `664 
+V L "LCD_INIT_STRING" 2 302 "int8[4]" `665 
+C L "lcd_init" 2 2 2 "FUNCTION"
+V L "x" 2 345 "int8" `667 
+V L "y" 2 345 "int8" `668 
+F G "lcd_gotoxy" 2 346 "void(int8 x,int8 y)" `666 
+V L "address" 2 347 "int8" `669 
+V L "c" 2 363 "int8" `671 
+F G "lcd_putc" 2 364 "void(int8 c)" `670 
+V L "x" 2 406 "int8" `673 
+V L "y" 2 406 "int8" `674 
+F G "lcd_getc" 2 407 "int8(int8 x,int8 y)" `672 
+V L "value" 2 408 "int8" `675 
+C L "lcd_getc" 2 2 1 "FUNCTION"
+C L "lcd_set_cgram_char" 2 2 5 "FUNCTION"
+V L "which" 2 424 "int8" `677 
+V L "ptr" 2 424 "*int8" `678 
+F G "lcd_set_cgram_char" 2 425 "void(int8 which,*int8 ptr)" `676 
+V L "i" 2 426 "int8" `679 
+C L "lcd_set_cgram_char" 2 2 1 "FUNCTION"
+V L "on" 2 443 "int8" `681 
+F G "lcd_cursor_on" 2 444 "void(int8 on)" `680 
+C L "lcd_cursor_on" 2 2 1 "FUNCTION"
+C L "lcd_cursor_on" 2 2 1 "FUNCTION"
+F G "MAIN" 0 16 "void()" `682  "CONFIGURACION PWM"
+C L "MAIN" 0 20 1 "FUNCTION"
+C L "MAIN" 0 20 1 "FUNCTION"
 F B "reset_cpu" 0 0
 F B "abs" 1 0
 F B "sleep" 0 1

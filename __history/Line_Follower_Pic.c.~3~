@@ -1,0 +1,17 @@
+#include <18f4550.h>
+#device adc=10
+#fuses XT,NOPROTECT,NOWDT,NOLVP
+#use delay(clock=4M)
+
+void main()
+{
+// CONFIGURACION PWM
+  setup_ccp1(CCP_PWM);
+   setup_ccp2(CCP_PWM);
+   setup_timer_2(T2_DIV_BY_1,250,1); // PWM de 1khz
+   set_pwm1_duty(4000);
+   set_pwm2_duty(4000);
+   while(TRUE){
+     
+   }
+}
