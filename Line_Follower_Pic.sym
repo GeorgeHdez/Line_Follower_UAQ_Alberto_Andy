@@ -1,0 +1,59 @@
+000     @SCRATCH
+001     @SCRATCH
+001     _RETURN_
+002     @SCRATCH
+003     @SCRATCH
+F83     PSP_DATA
+FB4.6   C1OUT
+FB4.7   C2OUT
+FBB     CCP_2_LOW
+FBB     CCP_2
+FBC     CCP_2_HIGH
+FBE     CCP_1_LOW
+FBE     CCP_1
+FBF     CCP_1_HIGH
+FE1-FE2 @READ_PACKED_MEMORY.P1
+FE1-FE2 @WRITE_PACKED_MEMORY.P2
+FE9-FEA @WRITE_PACKED_MEMORY.P1
+FE9-FEA @READ_PACKED_MEMORY.P2
+FE9-FEA @READ_PROGRAM_MEMORY.P3
+FE9-FEA @WRITE_PROGRAM_MEMORY.P4
+FF6-FF8 @READ_PROGRAM_MEMORY.P1
+FF6-FF8 @WRITE_PROGRAM_MEMORY.P2
+
+ROM Allocation:
+000004  main
+000004  @cinit1
+000014  @cinit2
+
+Project Directory:
+    F:\UAQ\RoboUAQ\Line_Followe_Pic\Line_Follower_UAQ_Alberto_Andy\
+
+Project Files:
+    Line_Follower_Pic.c                                     [25-Apr-16 10:18  CRC=5E6D27DC]
+    C:\Program Files (x86)\PICC\Devices\18f4550.h           [12-Nov-13 15:35  CRC=5337E248]
+
+Source signature=04DCEC6C
+
+Units:
+    Line_Follower_Pic (main)
+
+Compiler Settings:
+    Processor:      PIC18F4550
+    Pointer Size:   16
+    ADC Range:      0-1023
+    Opt Level:      9
+    Short,Int,Long: UNSIGNED: 1,8,16
+    Float,Double:   32,32
+
+Output Files:
+    XREF file:   Line_Follower_Pic.xsym
+    Errors:      Line_Follower_Pic.err
+    Ext Symbols: Line_Follower_Pic.esym
+    INHX32:      Line_Follower_Pic.hex
+    Symbols:     Line_Follower_Pic.sym
+    List:        Line_Follower_Pic.lst
+    Debug/COFF:  Line_Follower_Pic.cof
+    Project:     Line_Follower_Pic.ccspjt
+    Call Tree:   Line_Follower_Pic.tre
+    Statistics:  Line_Follower_Pic.STA

@@ -1,0 +1,87 @@
+CCS PCH C Compiler, Version 5.015, 5967               25-Apr-16 10:18
+
+               Filename:   F:\UAQ\RoboUAQ\Line_Followe_Pic\Line_Follower_UAQ_Alberto_Andy\Line_Follower_Pic.lst
+
+               ROM used:   72 bytes (0%)
+                           Largest free fragment is 32696
+               RAM used:   4 (0%) at main() level
+                           4 (0%) worst case
+               Stack used: 0 locations
+               Stack size: 31
+
+*
+0000:  GOTO   0004
+.................... #include <18f4550.h> 
+.................... //////////// Standard Header file for the PIC18F4550 device //////////////// 
+.................... /////////////////////////////////////////////////////////////////////////// 
+.................... ////        (C) Copyright 1996, 2013 Custom Computer Services          //// 
+.................... //// This source code may only be used by licensed users of the CCS C  //// 
+.................... //// compiler.  This source code may only be distributed to other      //// 
+.................... //// licensed users of the CCS C compiler.  No other use, reproduction //// 
+.................... //// or distribution is permitted without written permission.          //// 
+.................... //// Derivative programs created using this software in object code    //// 
+.................... //// form are not restricted in any way.                               //// 
+.................... /////////////////////////////////////////////////////////////////////////// 
+.................... #device PIC18F4550 
+....................  
+.................... #list 
+....................  
+.................... #device adc=10 
+.................... #fuses XT,NOPROTECT,NOWDT,NOLVP 
+.................... #use delay(clock=4M) 
+....................  
+.................... void main() 
+0004:  CLRF   FF8
+0006:  BCF    FD0.7
+0008:  MOVF   FC1,W
+000A:  ANDLW  C0
+000C:  IORLW  0F
+000E:  MOVWF  FC1
+0010:  MOVLW  07
+0012:  MOVWF  FB4
+.................... { 
+.................... // CONFIGURACION PWM 
+....................   setup_ccp1(CCP_PWM); 
+0014:  BCF    F94.2
+0016:  BCF    F8B.2
+0018:  MOVLW  0C
+001A:  MOVWF  FBD
+001C:  CLRF   FB7
+001E:  CLRF   FB6
+....................    setup_ccp2(CCP_PWM); 
+0020:  BCF    F94.1
+0022:  BCF    F8B.1
+0024:  MOVWF  FBA
+....................    setup_timer_2(T2_DIV_BY_4,250,1); // PWM de 1khz 
+0026:  MOVLW  00
+0028:  IORLW  05
+002A:  MOVWF  FCA
+002C:  MOVLW  FA
+002E:  MOVWF  FCB
+....................    set_pwm1_duty(500); 
+0030:  MOVLW  7D
+0032:  MOVWF  FBE
+0034:  MOVF   FBD,W
+0036:  ANDLW  CF
+0038:  MOVWF  FBD
+....................    set_pwm2_duty(900); 
+003A:  MOVLW  E1
+003C:  MOVWF  FBB
+003E:  MOVF   FBA,W
+0040:  ANDLW  CF
+0042:  MOVWF  FBA
+....................    while(TRUE){ 
+0044:  BRA    0044
+....................       
+....................    } 
+.................... } 
+0046:  SLEEP 
+
+Configuration Fuses:
+   Word  1: C03F   PLL12 CPUDIV4 USBDIV XT FCMEN IESO
+   Word  2: 1E3E   PUT BROWNOUT BORV21 VREGEN NOWDT WDT32768
+   Word  3: 8700   CCP2C1 PBADEN LPT1OSC MCLR
+   Word  4: 00A1   STVREN NOLVP ICSP2 NOXINST NODEBUG
+   Word  5: C00F   NOPROTECT NOCPB NOCPD
+   Word  6: E00F   NOWRT NOWRTC NOWRTB NOWRTD
+   Word  7: 400F   NOEBTR NOEBTRB
